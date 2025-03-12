@@ -49,7 +49,7 @@ class GolfCoursesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentGolfCoursesBinding.inflate(inflater, container, false)
         return binding.root
@@ -63,11 +63,9 @@ class GolfCoursesFragment : Fragment() {
         viewmodel.searchGolfCourses("")
 
         viewLifecycleOwner.lifecycleScope.launch {
-            // Collect the flow when the fragment's lifecycle is at least STARTED
             repeatOnLifecycle(Lifecycle.State.STARTED) {
 
                 viewmodel.golfCourses.collect {
-                    log("Got the result -->>> "+ it)
                     when(it){
                         is NetworkResult.Error ->{
                            showLoading(false)
