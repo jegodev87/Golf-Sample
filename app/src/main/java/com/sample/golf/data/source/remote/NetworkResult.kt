@@ -1,4 +1,4 @@
-package com.sample.golf.data.remote
+package com.sample.golf.data.source.remote
 
 sealed class NetworkResult<out T : Any> {
     data class Success<out T : Any>(val code: Int, val data: T) : NetworkResult<T>()

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingVertical="@dimen/_24sdp"
+    android:background="@color/black_dd"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.GolfCoursesFragment">
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline_start"
+       app:layout_constraintGuide_percent=".05"
+       android:orientation="vertical"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        app:layout_constraintGuide_percent=".95"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:includeFontPadding="false"
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothic_a1"
+        android:text="@string/label_search_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_search"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/grey"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:layout_width="0dp"
+        app:hintEnabled="false"
+        android:textColorHint="@color/white_grey_100"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search_courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_editext_radius8"
+            android:fontFamily="@font/gothic_a1"
+            android:hint="@string/label_search_courses"
+            android:includeFontPadding="false"
+            android:minHeight="@dimen/_35sdp"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/_12ssp"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="@+id/textinput_search"
+        app:layout_constraintStart_toStartOf="@+id/textinput_search"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_search" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:gravity="center"
+        android:fontFamily="@font/gothic_a1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_search" />
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:visibility="gone"
+        app:shimmer_base_color="@color/white_grey_100"
+        app:layout_constraintEnd_toEndOf="@+id/textinput_search"
+        app:layout_constraintStart_toStartOf="@+id/textinput_search"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+            <include layout="@layout/shimmer_golf_courses"/>
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

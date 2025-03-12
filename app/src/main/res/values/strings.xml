@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Golf Sample</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_search_courses">Search here…</string>
+    <string name="label_search_title">Search Golf Courses</string>
+    <string name="label_course_no_result">🏌️‍♂️ Oops! No golf courses found. Try a different swing! ⛳</string>
 </resources>

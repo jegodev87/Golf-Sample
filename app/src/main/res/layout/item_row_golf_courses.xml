@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="@dimen/_1sdp"
+    app:cardElevation="0dp"
+    android:layout_marginVertical="@dimen/_4sdp"
+    android:layout_marginHorizontal="@dimen/_1sdp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="false">
+
+    <LinearLayout
+        android:padding="@dimen/_8sdp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/shippori_antique"
+            android:gravity="start|center"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_2sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            tools:text="Course Name" />
+
+
+        <TextView
+            android:id="@+id/tv_club"
+            android:paddingVertical="@dimen/_2sdp"
+            android:fontFamily="@font/shippori_antique"
+            android:textSize="@dimen/_10ssp"
+            android:includeFontPadding="false"
+            android:gravity="start|center"
+            tools:text="Course Name"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:paddingVertical="@dimen/_2sdp"
+            android:fontFamily="@font/shippori_antique"
+            android:textSize="@dimen/_10ssp"
+            android:includeFontPadding="false"
+            android:gravity="start|center"
+            tools:text="Course Name"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

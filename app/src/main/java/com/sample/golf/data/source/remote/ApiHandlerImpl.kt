@@ -1,4 +1,4 @@
-package com.sample.golf.data.remote
+package com.sample.golf.data.source.remote
 
 import com.google.gson.Gson
 import com.sample.golf.utils.log

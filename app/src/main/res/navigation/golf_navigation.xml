@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/golf_navigation"
+    app:startDestination="@id/golfCoursesFragment">
+
+    <fragment
+        android:id="@+id/golfCoursesFragment"
+        android:name="com.sample.golf.ui.fragments.GolfCoursesFragment"
+        android:label="fragment_golf_courses"
+        tools:layout="@layout/fragment_golf_courses" />
+</navigation>

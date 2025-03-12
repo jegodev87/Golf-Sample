@@ -3,7 +3,8 @@ package com.sample.golf.di
 import android.util.Log
 import com.google.gson.GsonBuilder
 import com.sample.golf.BuildConfig
-import com.sample.golf.data.remote.clients.GolfClient
+import com.sample.golf.data.source.remote.clients.GolfClient
+import com.sample.golf.data.source.remote.interceptor.AuthorizationInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,22 +29,32 @@ object NetworkModule {
         }
     }
 
+    @Provides
+    @Singleton
+    fun provideAAuthInterceptor(): AuthorizationInterceptor {
+        return AuthorizationInterceptor()
+    }
+
     @Singleton
     @Provides
-    fun provideHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+    fun provideHttpClient(
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        interceptor: AuthorizationInterceptor
+    ): OkHttpClient {
         val builder = OkHttpClient.Builder()
             .readTimeout(15, TimeUnit.SECONDS)
             .connectTimeout(15, TimeUnit.SECONDS)
         if (BuildConfig.DEBUG) {
             builder.addInterceptor(httpLoggingInterceptor)
         }
+        builder.addInterceptor(interceptor)
         return builder.build()
     }
 
     @Provides
     @Singleton
     fun provideBaseUrl(): String {
-        return BuildConfig.BASE_URL_DEV
+        return BuildConfig.BASE_URL
     }
 
     @Singleton
@@ -54,7 +65,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideRetrofit(
-        baseUrl : String,
+        baseUrl: String,
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory
     ): Retrofit {
@@ -72,3 +83,4 @@ object NetworkModule {
 
 
 }
+

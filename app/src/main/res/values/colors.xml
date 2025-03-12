@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_grey">#161C6973</color>
+    <color name="white_grey_100">#1EB1B9BA</color>
+    <color name="white_grey_dark">#591C6973</color>
+    <color name="white_low">#fcfcfc</color>
+    <color name="colorPrimary">#C4B91D44</color>
+    <color name="colorPrimaryDark">#B91D44</color>
+    <color name="red">#95E91E63</color>
+    <color name="colorAccent">#2CA8FF</color>
+    <color name="airline_name">#515151</color>
+    <color name="grey">#515151</color>
+    <color name="grey_light">#9A787878</color>
+    <color name="black_dd">#dd000000</color>
 </resources>
